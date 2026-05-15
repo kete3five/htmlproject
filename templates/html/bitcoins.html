@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    </style>
+    <head>
+        
+    </head>
+    <body>
+        <form action="/button">
+            <button>Click me! </button>
+        </form>
+    </body>
+    <h1>
+        Check the most relevant crypto value prices!
+    </h1>
+    <table>  
+        {% if text %}
+        <tr> 
+            <th>    
+                Timestamps
+            </th>
+            <th>
+                Prices
+            </th>
+        </tr>
+        {% for info in text %}
+            <tr>
+                <th>    
+                    {{info[0]}}
+                </th>
+                <th>    
+                    {{info[1]}}
+                </th>
+            </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+</html>

@@ -9,7 +9,7 @@ class overriddenHTMLParser(HTMLParser):
         super().__init__()
     def handle_data(self, data):
         global readyData
-        readyData.append(data)
+        readyData.end(data)
         print(type(data))
 
 app = Flask(__name__)
