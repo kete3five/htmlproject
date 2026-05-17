@@ -29,10 +29,36 @@ def translatingTohumanTime(data):
     print(data)
     return data
 
+def findMax(data):
+    maxValue = -1
+    index = -1
+    for i in range(len(data)):
+        if data[i][1] > maxValue:
+            maxValue = data[i][1]
+            index = i        
+    print(data[index])
+    return data[index]
+
+def findMin(data):
+    print(min(data, key = lambda p: p[1]))
+    return min(data, key = lambda p: p[1])
+
+def findAverage(data):
+    averageValue = 0
+    for info in data:
+        averageValue+= info[1]
+    averageValue = averageValue / len(data)
+    print(averageValue)
+    return averageValue
+
 file = getDatafromAPI("bitcoin", "usd", "1", "hourly")
 #print()
 data = unJSON(file)
-print(data)
+#print(data)
 #convertmsToTime("1778342439151")
 #convertmsToTime("1778346011378")
 translatingTohumanTime(data)
+print()
+findMax(data)
+findMin(data)
+findAverage(data)

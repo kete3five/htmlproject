@@ -11,7 +11,7 @@ def showinformationonClick():
     for i  in range(len(data)):
         ansList.append(f"Bitcoin was estimated at {data[i][1]}$ at {data[i][0]}")
     print(ansList)
-    return render_template("html/bitcoins.html", text = data)
+    return render_template("html/bitcoins.html", text = data, maxima = findMax(data), minima = findMin(data), average = findAverage(data))
 
 @app.route("/")
 def showinformationonClickupgraded():

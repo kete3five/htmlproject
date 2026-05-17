@@ -16,6 +16,8 @@
     <h1>
         Check the most relevant crypto value prices!
     </h1>
+    <div class="globaldiv" style="display: flex;">
+    <div class="myfirstdiv" style="width: 50%;">
     <table>  
         {% if text %}
         <tr> 
@@ -38,4 +40,49 @@
         {% endfor %}
         {% endif %}
     </table>
+    </div>
+    <div class="sitediv" style="width: 50%;">
+    <table>
+        {% if maxima %}
+        <tr>
+            <th>    
+                max:
+            </th>
+            <th>    
+                {{maxima[0]}}
+            </th>
+            <th>
+                {{maxima[1]}}
+            </th>
+        </tr>
+        {% endif %}
+        {% if minima %}
+        <tr>
+            <th>    
+                min:
+            </th>
+            <th>    
+                {{minima[0]}}
+            </th>
+            <th>
+                {{minima[1]}}
+            </th>
+        </tr>
+        {% endif %}
+        {% if average %}
+        <tr>
+            <th>    
+                average:
+            </th>
+            <th>    
+                {{x}}
+            </th>
+            <th>
+                {{average}}
+            </th>
+        </tr>
+        {% endif %}
+    </table>
+    </div>
+    </div>
 </html>
